@@ -126,6 +126,8 @@ The instance running slow due to I just give 2GB memory, for test purpose. You e
 
 		vb.customize ["modifyvm", :id, "--memory", "2048"]
 		
+
+Kibana dashboard not customize yet, it should ok to check Tomcat log and syslog by use the default one `Sample Dashboard`.
 		
 The vagrant box contains: jdk7, tomcat, nginx, logstash, redis and elasticsearch, so it is big then usual. nearly 4.06GB.
 
