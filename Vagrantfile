@@ -3,6 +3,9 @@
 
 Vagrant.configure("2") do |config|
     config.vm.box = "arvat-test"
+    config.vm.box_url = "http://pirelli.e0x233.com/arvat-test.box"
+    config.vm.box_download_checksum = "2e260525eaf756d7386d91c8af3f4521"
+    config.vm.box_download_checksum_type = "md5"
     config.vm.hostname = "arvat"
 
     # kibana3
@@ -18,10 +21,10 @@ Vagrant.configure("2") do |config|
 
     config.vm.network :private_network, ip: "192.168.55.2"
 
-    config.vm.synced_folder "./", "/vagrant", :nfs => true
+    config.vm.synced_folder "./", "/vagrant"
 
     config.vm.provider :virtualbox do |vb|
-        vb.customize ["modifyvm", :id, "--memory", "2048"]
+        vb.customize ["modifyvm", :id, "--memory", "1024"]
         # show GUI of virtualbox
         #vb.gui = true
     end
